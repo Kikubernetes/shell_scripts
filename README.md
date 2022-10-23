@@ -1,4 +1,4 @@
 # shell_scripts
-shell scripts for daily use
+Shell scripts for daily use.
 
-mainly related to brain imaging
+Mainly related to brain image analysis.
