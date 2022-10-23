@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# This is intended to be a simple nifti viewer.You can specify files to open by GUI.
+# MRtrix3 and zenity are prerequisite.
+# To learn how to use it, run "syncview h".
+
+i=0
+# set mrview window size by display size
+dHL=$(xdpyinfo | grep dimensions | awk '{print $2}' | sed -e "s/x/ /" | awk '{print $1}')
+dVL=$(xdpyinfo | grep dimensions | awk '{print $2}' | sed -e "s/x/ /" | awk '{print $2}')
+mHL=$((dHL/30*9))
+mVL=$((dVL/20*8))
+
+# intensity range option
+case $1 in
+    d) echo "Default intensity range is set."
+       IR_OPTION="" ;;
+    h) cat <<- EOF
+	# This script is to open mrview windows with synchronized focus.
+	# "syncview" shows with intensity range 0 to 5000.
+	# "syncview d" shows with default(each window with different) intensity.
+	# "syncview s min max" specifies intensity range min to max.
+	# "syncview h" shows this help.
+	EOF
+        exit ;;
+    s*) echo "Intensity range is $2 to $3."
+       IR_OPTION="-intensity_range $2,$3" ;;
+    *) echo "Intensity range is 0 to 5000."
+       IR_OPTION="-intensity_range 0,5000" ;;
+esac
+    
+# select files and open mrview
+while true
+do
+  file=$(zenity --file-selection --filename=$PWD)
+  if [ "$file" != "" ]; then
+   echo "opening $file ..."
+   x=$((i%3*mHL))
+   [[ i -le 2 ]] && y=0
+   [[ i -gt 2 ]] && y=$((mVL*7/6))
+   mrview $file -sync.focus -focus false $IR_OPTION -position $x,$y -size $mHL,$mVL &
+   2> /dev/null
+   i=$((i+1))
+  else 
+    break
+  fi
+done
