@@ -25,4 +25,15 @@ You can see help with thin command.
 
 You can measure and record runtime of your script in timelog.txt, which is generated in the working directory.
 
+## change_intensity.sh
+
+**prerequisite for timelog: FSL (any version)**
+
+**usage**
+
+```Usage : change_intensity.sh Image.nii (or Image.nii.gz)```
+
+You can specify Minimum and Maximum intensity of nifti image.
+
+
 
