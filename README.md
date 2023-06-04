@@ -27,7 +27,7 @@ You can measure and record runtime of your script in timelog.txt, which is gener
 
 ## change_intensity.sh
 
-**prerequisite for timelog: FSL (any version)**
+**prerequisite for change_intensity.sh: FSL (any version)**
 
 **usage**
 
