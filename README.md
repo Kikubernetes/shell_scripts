@@ -35,5 +35,28 @@ You can measure and record runtime of your script in timelog.txt, which is gener
 
 You can specify Minimum and Maximum intensity of nifti image.
 
+## new_datadir.sh
+
+**prerequisite: nothing special**
 
 
+被験者データの中から特定のファイルやディレクトリを集めて新たなデータディレクトリを作成します。同じデータを使って別の解析をやりたい時、もしくは途中から解析をやり直したい時に便利です。
+
+スクリプト内に「変数」という項目があり、元となる被験者データのディレクトリ、その中の何をコピーするか、新しい被験者データのディレクトリをそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。
+
+その後このレポジトリをクローンしたディレクトリに移動して下記で行うと実行されます。
+
+Create a new data directory by collecting specific files or directories from the subject data. This is useful when you want to do another analysis using the same data, or when you want to start over in the middle of an analysis.
+
+There is a "Variables" section in the script that allows you to specify the original subject data directory, what to copy in it, and the new subject data directory, respectively. Please rewrite this section to suit your environment.
+
+After that, move to the directory (clone of this repository) and execute ：
+
+```bash
+cd ~/git/shell_scripts
+./new_datadir.sh
+```
+
+![](images/image230728-164210.png)
+
+![](images/image230728-164235.png)
