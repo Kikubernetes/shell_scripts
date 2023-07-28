@@ -57,6 +57,5 @@ cd ~/git/shell_scripts
 ./new_datadir.sh
 ```
 
-![](images/image230728-164210.png)
-
-![](images/image230728-164235.png)
+<img src="images/image230728-164210.png" width="200">
+<img src="images/image230728-164235.png" width="150">
