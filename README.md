@@ -42,7 +42,7 @@ You can specify Minimum and Maximum intensity of nifti image.
 
 被験者データの中から特定のファイルやディレクトリを集めて新たなデータディレクトリを作成します。同じデータを使って別の解析をやりたい時、もしくは途中から解析をやり直したい時に便利です。
 
-スクリプト内に「変数」という項目があり、元となる被験者データのディレクトリ、その中の何をコピーするか、新しい被験者データのディレクトリをそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。
+スクリプト内に「変数」という項目があり、元となる被験者データのディレクトリ、その中の何をコピーするか、新しい被験者データのディレクトリをそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。コピーするディレクトリ名、ファイル名は半角スペースで区切って()の中に記載します。
 
 その後このレポジトリをクローンしたディレクトリに移動して下記で行うと実行されます。
 
@@ -56,6 +56,19 @@ After that, move to the directory (clone of this repository) and execute ：
 cd ~/git/shell_scripts
 ./new_datadir.sh
 ```
+### example
 
-<img src="images/image230728-164210.png" width="200">
-<img src="images/image230728-164235.png" width="150">
+Tf you have file tree like this:
+
+<img src="images/image_2023-07-30_11-52-31.png" width="200">
+
+And if you want dir1 and dir2/file1 to be copied, modify variables like:
+
+```bash
+###--------------------Variables---------------------###
+original_directory=~/ori
+new_directory=~/new
+f_and_d=(dir1 dir2/file1)
+########################################################
+```
+<img src="images/image_2023-07-30_11-55-09.png" width="150">
