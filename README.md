@@ -11,7 +11,7 @@ You can view nii and mif files in multiple windows with syncronized slice positi
 
 **usage**
 
-You can see help with thin command.
+You can see help with this command.
 
 ```syncview h```
 
@@ -58,7 +58,7 @@ cd ~/git/shell_scripts
 ```
 ### example
 
-Tf you have file tree like this:
+If you have file tree like this:
 
 <img src="images/image_2023-07-30_11-52-31.png" width="200">
 
