@@ -72,3 +72,41 @@ f_and_d=(dir1 dir2/file1)
 ########################################################
 ```
 <img src="images/image_2023-07-30_11-55-09.png" width="150">
+
+## rename_files_after_foldername.sh
+
+これはフォルダーの名前をとってファイル名にするスクリプトです。使い方は次の例を見てください。
+
+例：
+今Originalフォルダ内に被験者sub001-sub003のフォルダがあります。各フォルダ内には同名のファイル、file1-3が含まれています。もし全てのfile1を１つのフォルダ（Newフォルダ）に集めたい場合、同名のファイルは上書きされてしまうため、各ファイルに被験者名をつけることができます。
+
+This is a script that takes the name of a folder and use it as a file name. See the following example for how to use it.
+
+Example: In the Original folder, there are folders named after the subjects sub001-sub003. Each folder contains files with the same name, file1-3. If you want to collect all file1 into one folder (New folder), you may give each file a subject name, since files with the same name will be overwritten.
+
+
+<img src="images/image230809-160540.png" width=150>
+
+スクリプト内に「変数」という項目があり、元となるフォルダ、その中の何をコピーするか、新しい被験者データフォルダ、新しい名前をそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。
+
+There is a "Variables" section in the script that allows you to specify the original folder, what to copy in it, the new subject data folder, and the new name, respectively. Please rewrite this section to suit your environment.
+
+```
+#-------------書き換える部分はここから-------------------#
+#==================Variables=========================#
+original_dir=~/Original
+file_name=file1
+new_dir=~/New
+new_name=file
+#-------------------ここまで---------------------------#
+```
+
+その後このレポジトリをクローンしたディレクトリ（例えば~/git/shell_scripts）に移動して下記をタイプすると実行されます。
+
+Then go to the directory where you cloned this repository (e.g. ~/git/shell_scripts) and type the following to execute.
+
+```bash
+cd ~/git/shell_scripts
+./rename_files_after_foldername.sh
+```
+<img src="images/image230809-162820.png" width=160>
