@@ -80,7 +80,7 @@ f_and_d=(dir1 dir2/file1)
 例：
 今Originalフォルダ内に被験者sub001-sub003のフォルダがあります。各フォルダ内には同名のファイル、file1-3が含まれています。もし全てのfile1を１つのフォルダ（Newフォルダ）に集めたい場合、同名のファイルは上書きされてしまうため、各ファイルに被験者名をつけることができます。
 
-This is a script that takes the name of a folder and use it as a file name. See the following example for how to use it.
+This is a script that takes the name of a folder and use it as a file name. For example, it can be used to collect FA.nii.gz for each subject in order to perform TBSS. See the following example for how to use it.
 
 Example: In the Original folder, there are folders named after the subjects sub001-sub003. Each folder contains files with the same name, file1-3. If you want to collect all file1 into one folder (New folder), you may give each file a subject name, since files with the same name will be overwritten.
 
