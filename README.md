@@ -109,4 +109,9 @@ Then go to the directory where you cloned this repository (e.g. ~/git/shell_scri
 cd ~/git/shell_scripts
 ./rename_files_after_foldername.sh
 ```
+
+出来上がったNewフォルダは以下のようになります。
+
+The resulting New folder will look like this
+
 <img src="images/image230809-162820.png" width=160>
