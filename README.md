@@ -115,3 +115,23 @@ cd ~/git/shell_scripts
 The resulting New folder will look like this
 
 <img src="images/image230809-162820.png" width=160>
+
+## gif_movie_to_still.sh
+
+This script does frame decomposition of animated gif.
+Prepare animatd gif(s) in the current working directory.
+Prerequisite is ImageMagick(https://imagemagick.org/index.php).
+
+このスクリプトはアニメーションGIFのフレーム分解を行います。
+カレントディレクトリにanimatd gifを用意します。
+前提として、ImageMagick(https://imagemagick.org/index.php)が必要です。
+
+
+## png_tilemake.sh
+
+Create tile-like images from png images. Each tile can contain 2-6 images. The name of the image must contain a 4-digit serial number starting with 0000. For example, "image0001.png" or "DWI_0100.png". If you decompose an animated gif that can be saved in fsleyes with gif_movie_to_still.sh in this repository, or if you save an image in mrview, it will be given a name that matches the criteria by default.
+
+png画像からタイル状の画像を作成します。
+一枚のタイルに2−6枚の画像を並べることができます。
+画像の名前は0000から始まる4桁の通し番号を含んでいる必要があります。例えば「image0001.png」 や 「DWI_0100.png」などです。
+fsleyesで保存できるanimated gifをこのレポジトリにあるgif_movie_to_still.shで分解したり、mrviewで画像を保存した場合、デフォルトで条件に合った名前をつけてくれます。
