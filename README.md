@@ -1,7 +1,19 @@
-# shell_scripts
+# shell_scripts <!-- omit in toc -->
 Shell scripts for daily use.
-
 Mainly related to brain image analysis.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [syncview](#syncview)
+- [timelog](#timelog)
+- [change\_intensity.sh](#change_intensitysh)
+- [new\_datadir.sh](#new_datadirsh)
+  - [example](#example)
+- [rename\_files\_after\_foldername.sh](#rename_files_after_foldernamesh)
+- [gif\_movie\_to\_still.sh](#gif_movie_to_stillsh)
+- [png\_tilemake.sh](#png_tilemakesh)
+
 
 ## syncview
 
