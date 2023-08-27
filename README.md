@@ -124,7 +124,7 @@ Prerequisite is ImageMagick(https://imagemagick.org/index.php).
 
 このスクリプトはアニメーションGIFのフレーム分解を行います。
 カレントディレクトリにanimatd gifを用意します。
-前提として、ImageMagick(https://imagemagick.org/index.php)が必要です。
+前提として、ImageMagick(https://imagemagick.org/index.php) が必要です。
 
 
 ## png_tilemake.sh
