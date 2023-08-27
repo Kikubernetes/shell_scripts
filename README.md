@@ -2,9 +2,8 @@
 Shell scripts for daily use.
 Mainly related to brain image analysis.
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [syncview](#syncview)
 - [timelog](#timelog)
 - [change\_intensity.sh](#change_intensitysh)
@@ -17,7 +16,7 @@ Mainly related to brain image analysis.
 
 ## syncview
 
-**prerequisite for syncview: Mrtrix3 and zenity.**
+**prerequisite : Mrtrix3 and zenity**
 
 You can view nii and mif files in multiple windows with syncronized slice position (if they were performed at the same position and date)
 
@@ -29,7 +28,7 @@ You can see help with this command.
 
 ## timelog
 
-**prerequisite for timelog: nothing special**
+**prerequisite : nothing special**
 
 **usage**
 
@@ -39,7 +38,7 @@ You can measure and record runtime of your script in timelog.txt, which is gener
 
 ## change_intensity.sh
 
-**prerequisite for change_intensity.sh: FSL (any version)**
+**prerequisite : FSL (any version)**
 
 **usage**
 
@@ -49,7 +48,7 @@ You can specify Minimum and Maximum intensity of nifti image.
 
 ## new_datadir.sh
 
-**prerequisite: nothing special**
+**prerequisite : nothing special**
 
 
 被験者データの中から特定のファイルやディレクトリを集めて新たなデータディレクトリを作成します。同じデータを使って別の解析をやりたい時、もしくは途中から解析をやり直したい時に便利です。
@@ -86,6 +85,7 @@ f_and_d=(dir1 dir2/file1)
 <img src="images/image_2023-07-30_11-55-09.png" width="150">
 
 ## rename_files_after_foldername.sh
+**prerequisite : nothing special**
 
 これはフォルダーの名前をとってファイル名にするスクリプトです。例えばTBSSを行うために各被験者のFA.nii.gzを集めるのに使えます。使い方は次の例を見てください。
 
@@ -130,16 +130,30 @@ The resulting New folder will look like this
 
 ## gif_movie_to_still.sh
 
+**prerequisite : ImageMagick(https://imagemagick.org/index.php)**
+
+**usage**
+
+```
+cd directory_with_animated_gif
+png_tilemake.sh
+
+```
+
 This script does frame decomposition of animated gif.
 Prepare animatd gif(s) in the current working directory.
-Prerequisite is ImageMagick(https://imagemagick.org/index.php).
 
 このスクリプトはアニメーションGIFのフレーム分解を行います。
 カレントディレクトリにanimatd gifを用意します。
-前提として、ImageMagick(https://imagemagick.org/index.php) が必要です。
 
 
 ## png_tilemake.sh
+
+**prerequisite : FSL**
+
+**usage**
+
+```png_tilemake.sh```
 
 Create tile-like images from png images. Each tile can contain 2-6 images. The name of the image must contain a 4-digit serial number starting with 0000. For example, "image0001.png" or "DWI_0100.png". If you decompose an animated gif that can be saved in fsleyes with gif_movie_to_still.sh in this repository, or if you save an image in mrview, it will be given a name that matches the criteria by default.
 
