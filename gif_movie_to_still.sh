@@ -22,13 +22,13 @@ for gif_name in ${animated_gif[@]}
     do
         # mkdir ${gif%%.*}s
         gif=$(echo $gif_name | sed 's/.gif//')
-        [[ -d ${gif}s ]] && mv ${gif}s ${gif}s_ex
-        mkdir ${gif}s
-        #convert +adjoin $gif_name -coalesce $gif%03d.png
-        convert +adjoin $gif_name -coalesce $gif%03d.gif
+        [[ -d ${gif} ]] && mv ${gif} ${gif}_ex
+        mkdir ${gif}
+        convert +adjoin $gif_name -coalesce $gif%04d.png
+        #convert +adjoin $gif_name -coalesce $gif%04d.gif
         mv $gif_name original_gifs/
-        #mv $gif*.png ${gif}s/
-        mv $gif*.gif ${gif}s/
+        mv $gif*.png ${gif}/
+        #mv $gif*.gif ${gif}s/
     done
 
 
