@@ -142,9 +142,10 @@ png_tilemake.sh
 
 This script does frame decomposition of animated gif.
 Prepare animatd gif(s) in the current working directory.
+You can decompose more than one gif. A folder will be made for each of them, and the decomposed images will go into that folder. The original images will go in a folder named original_gifs. By default, they are saved in png format, so if you want gifs, switch the comment out.
 
 このスクリプトはアニメーションGIFのフレーム分解を行います。
-カレントディレクトリにanimatd gifを用意します。
+カレントディレクトリにanimatd gifを用意します。複数あっても大丈夫です。それぞれのフォルダを作成してその中に分解された画像が入ります。元画像はoriginal_gifsというフォルダに入ります。デフォルトではpng形式で保存されるので、gifが欲しい場合はコメントアウトを入れ替えて下さい。
 
 
 ## png_tilemake.sh
