@@ -12,6 +12,7 @@ Mainly related to brain image analysis.
 - [rename\_files\_after\_foldername.sh](#rename_files_after_foldernamesh)
 - [gif\_movie\_to\_still.sh](#gif_movie_to_stillsh)
 - [png\_tilemake.sh](#png_tilemakesh)
+- [label\_list\_maker.sh](#label_list_makersh)
 
 
 ## syncview
@@ -162,3 +163,11 @@ png画像からタイル状の画像を作成します。
 一枚のタイルに2−6枚の画像を並べることができます。
 画像の名前は0000から始まる4桁の通し番号を含んでいる必要があります。例えば「image0001.png」 や 「DWI_0100.png」などです。
 fsleyesで保存できるanimated gifをこのレポジトリにあるgif_movie_to_still.shで分解したり、mrviewで画像を保存した場合、デフォルトで条件に合った名前をつけてくれます。
+
+## label_list_maker.sh
+
+Make a label list from xml file of FSL atlases.
+When you download and run the program, a list of atlases will appear and you will be asked which one you want to make, so copy and paste the name including the extension and return.
+```
+./label_list_maker.sh
+```
