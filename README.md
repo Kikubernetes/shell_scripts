@@ -13,6 +13,7 @@ Mainly related to brain image analysis.
 - [gif\_movie\_to\_still.sh](#gif_movie_to_stillsh)
 - [png\_tilemake.sh](#png_tilemakesh)
 - [label\_list\_maker.sh](#label_list_makersh)
+- [first.sh](#firstsh)
 
 
 ## syncview
@@ -52,12 +53,6 @@ You can specify Minimum and Maximum intensity of nifti image.
 **prerequisite : nothing special**
 
 
-被験者データの中から特定のファイルやディレクトリを集めて新たなデータディレクトリを作成します。同じデータを使って別の解析をやりたい時、もしくは途中から解析をやり直したい時に便利です。
-
-スクリプト内に「変数」という項目があり、元となる被験者データのディレクトリ、その中の何をコピーするか、新しい被験者データのディレクトリをそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。コピーするディレクトリ名、ファイル名は半角スペースで区切って()の中に記載します。
-
-その後このレポジトリをクローンしたディレクトリに移動して下記で行うと実行されます。
-
 Create a new data directory by collecting specific files or directories from the subject data. This is useful when you want to do another analysis using the same data, or when you want to start over in the middle of an analysis.
 
 There is a "Variables" section in the script that allows you to specify the original subject data directory, what to copy in it, and the new subject data directory, respectively. Please rewrite this section to suit your environment.
@@ -88,11 +83,6 @@ f_and_d=(dir1 dir2/file1)
 ## rename_files_after_foldername.sh
 **prerequisite : nothing special**
 
-これはフォルダーの名前をとってファイル名にするスクリプトです。例えばTBSSを行うために各被験者のFA.nii.gzを集めるのに使えます。使い方は次の例を見てください。
-
-例：
-今Originalフォルダ内に被験者sub001-sub003のフォルダがあります。各フォルダ内には同名のファイル、file1-3が含まれています。もし全てのfile1を１つのフォルダ（Newフォルダ）に集めたい場合、同名のファイルは上書きされてしまうため、各ファイルに被験者名をつけることができます。
-
 This is a script that takes the name of a folder and use it as a file name. For example, it can be used to collect FA.nii.gz for each subject in order to perform TBSS. See the following example for how to use it.
 
 Example: In the Original folder, there are folders named after the subjects sub001-sub003. Each folder contains files with the same name, file1-3. If you want to collect all file1 into one folder (New folder), you may give each file a subject name, since files with the same name will be overwritten.
@@ -100,21 +90,16 @@ Example: In the Original folder, there are folders named after the subjects sub0
 
 <img src="images/image230809-160540.png" width=150>
 
-スクリプト内に「変数」という項目があり、元となるフォルダ、その中の何をコピーするか、新しいフォルダ、新しい名前をそれぞれ指定できるようになっています。ご自分の環境に合わせてこの部分を書き換えてください。
 
 There is a "Variables" section in the script that allows you to specify the original folder, what to copy in it, the new folder, and the new name, respectively. Please rewrite this section to suit your environment.
 
 ```
-#-------------書き換える部分はここから-------------------#
 #==================Variables=========================#
 original_dir=~/Original
 file_name=file1
 new_dir=~/New
 new_name=file
-#-------------------ここまで---------------------------#
 ```
-
-その後このレポジトリをクローンしたディレクトリ（例えば~/git/shell_scripts）に移動して下記をタイプすると実行されます。
 
 Then go to the directory where you cloned this repository (e.g. ~/git/shell_scripts) and type the following to execute.
 
@@ -122,8 +107,6 @@ Then go to the directory where you cloned this repository (e.g. ~/git/shell_scri
 cd ~/git/shell_scripts
 ./rename_files_after_foldername.sh
 ```
-
-出来上がったNewフォルダは以下のようになります。
 
 The resulting New folder will look like this
 
@@ -145,9 +128,6 @@ This script does frame decomposition of animated gif.
 Prepare animatd gif(s) in the current working directory.
 You can decompose more than one gif. A folder will be made for each of them, and the decomposed images will go into that folder. The original images will go in a folder named original_gifs. By default, they are saved in png format, so if you want gifs, switch the comment out.
 
-このスクリプトはアニメーションGIFのフレーム分解を行います。
-カレントディレクトリにanimatd gifを用意します。複数あっても大丈夫です。それぞれのフォルダを作成してその中に分解された画像が入ります。元画像はoriginal_gifsというフォルダに入ります。デフォルトではpng形式で保存されるので、gifが欲しい場合はコメントアウトを入れ替えて下さい。
-
 
 ## png_tilemake.sh
 
@@ -155,14 +135,12 @@ You can decompose more than one gif. A folder will be made for each of them, and
 
 **usage**
 
-```png_tilemake.sh```
+```
+png_tilemake.sh
+```
 
 Create tile-like images from png images. Each tile can contain 2-6 images. The name of the image must contain a 4-digit serial number starting with 0000. For example, "image0001.png" or "DWI_0100.png". If you decompose an animated gif that can be saved in fsleyes with gif_movie_to_still.sh in this repository, or if you save an image in mrview, it will be given a name that matches the criteria by default.
 
-png画像からタイル状の画像を作成します。
-一枚のタイルに2−6枚の画像を並べることができます。
-画像の名前は0000から始まる4桁の通し番号を含んでいる必要があります。例えば「image0001.png」 や 「DWI_0100.png」などです。
-fsleyesで保存できるanimated gifをこのレポジトリにあるgif_movie_to_still.shで分解したり、mrviewで画像を保存した場合、デフォルトで条件に合った名前をつけてくれます。
 
 ## label_list_maker.sh
 
@@ -170,4 +148,17 @@ Make a label list from xml file of FSL atlases.
 When you download and run the program, a list of atlases will appear and you will be asked which one you want to make, so copy and paste the name including the extension and return.
 ```
 ./label_list_maker.sh
+```
+
+## first.sh
+
+Simole wrapper of dcm2niix, which converts dicom to nifti and organizes directory.
+
+**prerequisite : dcm2niix**
+
+**usage**
+
+```
+cd dicom_directory
+first.sh
 ```
