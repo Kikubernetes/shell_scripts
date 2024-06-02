@@ -162,3 +162,22 @@ Simole wrapper of dcm2niix, which converts dicom to nifti and organizes director
 cd dicom_directory
 first.sh
 ```
+
+# dobylist.sh Script
+
+## Description
+The `dobylist.sh` script executes a specified command for each subject ID listed in a provided text file. It is ideal for batch processing tasks in research environments where actions need to be repeated for multiple subjects.
+
+## Requirements
+- Bash shell
+- Permission to execute the script (`chmod +x dobylist.sh`)
+
+## Usage
+To use the script, you need to provide two arguments:
+1. The command you want to execute for each subject. The argument must be one, and it needs to be the subject ID.
+2. The path to the text file containing the subject IDs.
+
+### Syntax
+```bash
+./dobylist.sh <command> <subject_file>
+```
