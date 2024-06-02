@@ -180,5 +180,5 @@ To use the script, you need to provide two arguments:
 
 **Syntax**
 ```bash
-./dobylist.sh <command> <subject_file>
+./dobylist.sh <command> <subject_list>
 ```

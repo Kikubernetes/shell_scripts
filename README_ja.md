@@ -182,5 +182,5 @@ first.sh
 
 **構文**
 ```bash
-./dobylist.sh <command> <subject_file>
+./dobylist.sh <command> <subject_list>
 ```
