@@ -13,6 +13,7 @@
 - [png\_tilemake.sh](#png_tilemakesh)
 - [label\_list\_maker.sh](#label_list_makersh)
 - [first.sh](#firstsh)
+- [dobylist.sh](#dobylistsh)
 
 
 ## syncview
@@ -165,21 +166,21 @@ cd dicom_directory
 first.sh
 ```
 
-# dobylist.sh スクリプト
+## dobylist.sh
 
-## 説明
+**説明**
 `dobylist.sh` スクリプトは、指定されたテキストファイルに記載されている各被験者IDに対して指定されたコマンドを実行します。複数の被験者に対して繰り返し行う必要がある作業に対して、バッチ処理タスクとして理想的です。
 
-## 必要条件
+**必要条件**
 - Bash シェル
 - スクリプトの実行権限 (`chmod +x dobylist.sh`)
 
-## 使用方法
+**使用方法**
 スクリプトを使用するには、2つの引数を指定する必要があります：
 1. 各被験者に対して実行したいコマンド。引数は１つで、被験者IDである必要があります。
-2. 被験者IDが記載されたテキストファイルへのパス。
+2. 被験者IDが記載されたテキストファイルへのパス。IDは一行に一人分ずつ記載してください。
 
-### 構文
+**構文**
 ```bash
 ./dobylist.sh <command> <subject_file>
 ```

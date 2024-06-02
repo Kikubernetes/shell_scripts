@@ -14,6 +14,7 @@ Mainly related to brain image analysis.
 - [png\_tilemake.sh](#png_tilemakesh)
 - [label\_list\_maker.sh](#label_list_makersh)
 - [first.sh](#firstsh)
+- [dobylist.sh](#dobylistsh)
 
 
 ## syncview
@@ -163,21 +164,21 @@ cd dicom_directory
 first.sh
 ```
 
-# dobylist.sh Script
+## dobylist.sh
 
-## Description
+**Description**
 The `dobylist.sh` script executes a specified command for each subject ID listed in a provided text file. It is ideal for batch processing tasks in research environments where actions need to be repeated for multiple subjects.
 
-## Requirements
+**Requirements**
 - Bash shell
 - Permission to execute the script (`chmod +x dobylist.sh`)
 
-## Usage
+**Usage**
 To use the script, you need to provide two arguments:
 1. The command you want to execute for each subject. The argument must be one, and it needs to be the subject ID.
-2. The path to the text file containing the subject IDs.
+2. The path to the text file containing the subject IDs (one ID per line). 
 
-### Syntax
+**Syntax**
 ```bash
 ./dobylist.sh <command> <subject_file>
 ```
