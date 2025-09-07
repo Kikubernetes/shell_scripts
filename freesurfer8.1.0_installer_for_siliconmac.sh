@@ -104,7 +104,7 @@ rm ${pkg}.md5
 
 # Install freesurfer
 echo "Install freesurfer"
-sudo apt install $HOME/Downloads/${pkg}
+sudo installer -pkg $HOME/Downloads/${pkg} -target /
 
 # Prepare freesurfer directory in $HOME
 echo "make freesurfer directory in $HOME"
