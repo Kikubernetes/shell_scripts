@@ -20,7 +20,7 @@ macOS=x86_64
 pkg="freesurfer-macOS-darwin_${macOS}-${ver}.pkg"
 url="https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/${ver}/${pkg}"
 curlcmd="curl -O -C -"
-md5="0f524bb59195c1053a9a56d2713a34cf"
+md5_EXPECTED="0f524bb59195c1053a9a56d2713a34cf"
 # md5 values can be obtained from the link below.
 # https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads
 ######################################################################
@@ -90,21 +90,20 @@ fi
 # Check the archive
 cd $HOME/Downloads
 echo "Check if the downloaded archive is not corrupt."
-echo "${md5} ${pkg}" > ${pkg}.md5
-md5sum -c ${pkg}.md5
-while [ "$?" -ne 0 ]; do
-    echo "Filesize is not correct. Re-try downloading."
-    sleep 5
-    eval $curlcmd $url
-    md5sum -c ${pkg}.md5
-done
+md5_ACTUAL=$(md5 -q ${pkg})
+if [ "$md5_EXPECTED" = "$md5_ACTUAL" ]; then
+  echo "MD5 OK"
+else
+  echo "MD5 mismatch!"
+  exit 1
+fi
 
 echo "Filesize is correct!"
-rm ${pkg}.md5
 
 # Install freesurfer
 echo "Install freesurfer"
 sudo installer -pkg $HOME/Downloads/${pkg} -target /
+sudo mv /Applications/freesurfer/${ver} /usr/local/freesurfer/
 
 # Prepare freesurfer directory in $HOME
 echo "make freesurfer directory in $HOME"
